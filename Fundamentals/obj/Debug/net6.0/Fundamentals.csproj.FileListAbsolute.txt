@@ -1,0 +1,15 @@
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\bin\Debug\net6.0\Fundamentals.exe
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\bin\Debug\net6.0\Fundamentals.deps.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\bin\Debug\net6.0\Fundamentals.runtimeconfig.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\bin\Debug\net6.0\Fundamentals.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\bin\Debug\net6.0\Fundamentals.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.csproj.AssemblyReference.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.AssemblyInfoInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.AssemblyInfo.cs
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.csproj.CoreCompileInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\refint\Fundamentals.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\Fundamentals.genruntimeconfig.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentals\obj\Debug\net6.0\ref\Fundamentals.dll
