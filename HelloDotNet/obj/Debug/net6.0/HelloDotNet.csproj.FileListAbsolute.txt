@@ -1,0 +1,15 @@
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\bin\Debug\net6.0\HelloDotNet.exe
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\bin\Debug\net6.0\HelloDotNet.deps.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\bin\Debug\net6.0\HelloDotNet.runtimeconfig.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\bin\Debug\net6.0\HelloDotNet.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\bin\Debug\net6.0\HelloDotNet.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.csproj.AssemblyReference.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.AssemblyInfoInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.AssemblyInfo.cs
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.csproj.CoreCompileInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\refint\HelloDotNet.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\HelloDotNet.genruntimeconfig.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\HelloDotNet\obj\Debug\net6.0\ref\HelloDotNet.dll
