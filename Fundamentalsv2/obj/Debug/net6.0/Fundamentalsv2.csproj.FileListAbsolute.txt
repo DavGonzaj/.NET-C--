@@ -1,0 +1,15 @@
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\bin\Debug\net6.0\Fundamentalsv2.exe
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\bin\Debug\net6.0\Fundamentalsv2.deps.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\bin\Debug\net6.0\Fundamentalsv2.runtimeconfig.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\bin\Debug\net6.0\Fundamentalsv2.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\bin\Debug\net6.0\Fundamentalsv2.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.csproj.AssemblyReference.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.AssemblyInfoInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.AssemblyInfo.cs
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.csproj.CoreCompileInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\refint\Fundamentalsv2.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\Fundamentalsv2.genruntimeconfig.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\Fundamentalsv2\obj\Debug\net6.0\ref\Fundamentalsv2.dll
