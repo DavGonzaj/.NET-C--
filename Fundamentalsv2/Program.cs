@@ -41,3 +41,25 @@ Console.WriteLine(iceCreamFlavors[2]);
 
 //Output the length of the List again. It should now be one fewer.
 Console.WriteLine(iceCreamFlavors.Count);
+
+
+//User Dictionary
+
+// Create a dictionary that will store string keys and string values.
+Dictionary<string, string> nameFlavorDictionary = new Dictionary<string, string>();
+Random random = new Random();
+// Add key/value pairs to the dictionary where:
+// Each key is a name from your names array (this can be done by hand or using logic)
+// Each value is a randomly selected flavor from your flavors List (remember Random from earlier?)
+foreach (string name in names)
+{
+    int randomIndex = random.Next(iceCreamFlavors.Count);
+    string randomFlavor = iceCreamFlavors[randomIndex];
+    nameFlavorDictionary.Add(name, randomFlavor);
+}
+// Loop through the dictionary and print out each user's name and their associated ice cream flavor.
+// Printing the name-flavor pairs
+foreach (KeyValuePair<string, string> pair in nameFlavorDictionary)
+{
+    Console.WriteLine(pair.Key + ": " + pair.Value);
+}
