@@ -1,0 +1,15 @@
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\bin\Debug\net6.0\OOP_lecture.exe
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\bin\Debug\net6.0\OOP_lecture.deps.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\bin\Debug\net6.0\OOP_lecture.runtimeconfig.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\bin\Debug\net6.0\OOP_lecture.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\bin\Debug\net6.0\OOP_lecture.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.csproj.AssemblyReference.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.AssemblyInfoInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.AssemblyInfo.cs
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.csproj.CoreCompileInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\refint\OOP_lecture.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\OOP_lecture.genruntimeconfig.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\OOP_lecture\obj\Debug\net6.0\ref\OOP_lecture.dll
