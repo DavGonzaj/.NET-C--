@@ -1,0 +1,5 @@
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.csproj.AssemblyReference.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.AssemblyInfoInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.AssemblyInfo.cs
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.csproj.CoreCompileInputs.cache
