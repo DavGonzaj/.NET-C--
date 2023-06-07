@@ -1,0 +1,23 @@
+<h1>Videos Page</h1>
+<a href="/">Home</a>
+@* the @ symbol denotes the start of c# code in cshtml files *@
+@{foreach(string videoId in ViewBag.Videos)
+{
+    <iframe
+        width="560"
+        height="400"
+        src="https://www.youtube.com/embed/@videoId"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+}
+}
+
+@* this will error out during runtime b/c the VideoCount var is a string *@
+@* @{if(ViewBag.VideoCount == 5)
+{
+    <p>There are five Videos!!!</p>
+}
+} *@
