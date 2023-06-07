@@ -3,3 +3,13 @@ C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\De
 C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.AssemblyInfoInputs.cache
 C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.AssemblyInfo.cs
 C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.csproj.CoreCompileInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\bin\Debug\net6.0\game_developer2.exe
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\bin\Debug\net6.0\game_developer2.deps.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\bin\Debug\net6.0\game_developer2.runtimeconfig.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\bin\Debug\net6.0\game_developer2.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\bin\Debug\net6.0\game_developer2.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\refint\game_developer2.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\game_developer2.genruntimeconfig.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer2\obj\Debug\net6.0\ref\game_developer2.dll
