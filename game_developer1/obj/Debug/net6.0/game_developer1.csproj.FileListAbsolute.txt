@@ -1,0 +1,15 @@
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\bin\Debug\net6.0\game_developer1.exe
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\bin\Debug\net6.0\game_developer1.deps.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\bin\Debug\net6.0\game_developer1.runtimeconfig.json
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\bin\Debug\net6.0\game_developer1.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\bin\Debug\net6.0\game_developer1.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.csproj.AssemblyReference.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.AssemblyInfoInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.AssemblyInfo.cs
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.csproj.CoreCompileInputs.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\refint\game_developer1.dll
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.pdb
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\game_developer1.genruntimeconfig.cache
+C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\game_developer1\obj\Debug\net6.0\ref\game_developer1.dll
