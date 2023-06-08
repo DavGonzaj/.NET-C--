@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "gguFGXIvNxOziLnyH9Vxbg8Dz/6xZDy9x4C6AUWadKs=",
+  "Source": "Dojo-Survey",
+  "BasePath": "_content/Dojo-Survey",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Dojo-Survey\\wwwroot",
+      "Source": "Dojo-Survey",
+      "ContentRoot": "C:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\Dojo-Survey\\wwwroot\\",
+      "BasePath": "_content/Dojo-Survey",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\Dojo-Survey\\wwwroot\\css\\style.css",
+      "SourceId": "Dojo-Survey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\Dojo-Survey\\wwwroot\\",
+      "BasePath": "_content/Dojo-Survey",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    }
+  ]
+}
