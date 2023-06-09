@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Generator";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="card m-auto my-5 p-5 col-5 row justify-content-center">
+  <div class="text-center m-auto">
+        @{
+        <h5>Random passcode (passcode #<span id="Count"></span>)</h5>
+        <h3 class="bg-primary text-white rounded">
+          <span id="newPassword"></span>
+        </h3>
+        }
+  </div>
+  <button onclick="getnewRandomPass()" class="btn btn-primary my-3, m-auto">
+    Generate
+  </button>
+</div>
+

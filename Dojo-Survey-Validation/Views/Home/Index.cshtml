@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model User
+
+<div class="row my-5 m-auto">
+            <div class="card col-8 p-5 m-auto">
+                <form asp-action="FormSubmit" asp-controller="Home" method="post">
+                    <div class="row g-3 align-items-center mb-3 col-8 justify-content-between">
+                    <small><span asp-validation-for="Name" class="text-danger"></span></small>
+                        <div class="col-auto">
+                            <label asp-for="Name" class="col-form-label">Your Name</label>
+                        </div>
+                        <div class="col-auto">
+                            <input asp-for="Name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3 col-8 justify-content-between">
+                    <span asp-validation-for="DojoLocation" class="text-danger"></span>
+                        <div class="col-auto">
+                            <label asp-for="DojoLocation" class="col-form-label">Dojo Location</label>
+                        </div>
+                        <div class="col-auto">
+                            <select asp-for="DojoLocation" class="form-select">
+                                <option selected></option>
+                                <option value="Chicago">Chicago</option>
+                                <option value="New York">New York</option>
+                                <option value="Miami">Miami</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center mb-3 col-8 justify-content-between">
+                    <span asp-validation-for="FavLang" class="text-danger"></span>
+                        <div class="col-auto">
+                            <label asp-for="FavLang" class="col-form-label">Favorite Language</label>
+                        </div>
+                        <div class="col-auto">
+                            <select asp-for="FavLang" class="form-select">
+                                <option selected></option>
+                                <option value="C#">C#</option>
+                                <option value="Python">Python</option>
+                                <option value="JavaScript">JavaScript</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Comment" class="form-label">Comment</label>
+                        <textarea class="form-control" rows="3" asp-for="Comment"></textarea>
+                    <span asp-validation-for="Comment" class="text-danger"></span>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
