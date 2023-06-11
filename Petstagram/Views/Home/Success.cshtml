@@ -1,0 +1,14 @@
+<h1>Success</h1>
+<h3>Pet name is: @Context.Session.GetString("PetName")</h3>
+<h3>Pet Age is: @Context.Session.GetInt32("PetAge")</h3>
+
+@{
+    //if you're concerned about something in session returning null, you can store it
+    // in a variable & then use conditional logic to display or not
+    string? name = @Context.Session.GetString("petName");
+    if(name != null)
+    {
+        <h3>Pet name but the key has missing caps: @name</h3>
+
+    }
+}

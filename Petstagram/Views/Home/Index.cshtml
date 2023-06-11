@@ -1,0 +1,72 @@
+﻿@model Pet
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h2>Hello! Add a pet to our project!.... But with Session</h2>
+
+<div class="container w-75 mx-auto">
+  <h2 class="text-center">New Pet</h2>
+
+  <form class="shadow p-3 rounded" asp-controller="Home" asp-action="CreateWithSession" method="POST">
+      <div class="mb-3">
+        <label asp-for="Name"></label>
+        <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="Name">
+      </div>
+      
+      <div class="mb-3">
+        <label asp-for="Type"></label>
+        <span asp-validation-for="Type" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="Type">
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="Age"></label>
+        <span asp-validation-for="Age" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="Age">
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="IsLazy"></label>
+        <input class="" asp-for="IsLazy">
+      </div>
+
+      <button type="submit">Add Pet</button>
+  </form>
+</div>
+
+<h2>Hello! Add a pet to our project!</h2>
+
+<div class="container w-75 mx-auto">
+  <h2 class="text-center">New Pet</h2>
+
+  <form class="shadow p-3 rounded" asp-controller="Home" asp-action="Create" method="POST">
+      <div class="mb-3">
+        <label asp-for="Name"></label>
+        <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="Name">
+      </div>
+      
+      <div class="mb-3">
+        <label asp-for="Type"></label>
+        <span asp-validation-for="Type" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="Type">
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="Age"></label>
+        <span asp-validation-for="Age" class="text-danger font-weight-bold"></span>
+        <input class="form-control" asp-for="Age">
+      </div>
+
+      <div class="mb-3">
+        <label asp-for="IsLazy"></label>
+        <input class="" asp-for="IsLazy">
+      </div>
+
+      <button type="submit">Add Pet</button>
+  </form>
+
+</div>

@@ -1,0 +1,29 @@
+<!-- Dashboard.aspx -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%= Session["UserName"] %>!</h1>
+    <h2>Value: <%= Session["Value"] %></h2>
+    <form asp-controller="Home" asp-action="CreateWithSession" method="post">
+        <input type="hidden" id="operation" name="operation" value="" />
+        <div>
+            <input type="button" onclick="submitForm('+1')" value="+ 1" />
+            <input type="button" onclick="submitForm('-1')" value="- 1" />
+            <input type="button" onclick="submitForm('x2')" value="x 2" />
+            <input type="button" onclick="submitForm('Random')" value="Random" />
+        </div>
+        <div>
+            <input type="submit" value="Log Out" name="logout" />
+        </div>
+    </form>
+    <script>
+        function submitForm(operation) {
+            document.getElementById('operation').value = operation;
+            document.forms[0].submit();
+        }
+    </script>
+</body>
+</html>
