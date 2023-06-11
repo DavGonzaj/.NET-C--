@@ -1,31 +1,55 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Session_Workshop.Models;
-
-namespace Session_Workshop.Controllers;
+﻿using Microsoft.AspNetCore.Mvc;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
     public IActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpPost]
+    public IActionResult Dashboard(DashboardModel model)
     {
-        return View();
+        if (model.Operation == "logout")
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index");
+        }
+
+        if (string.IsNullOrEmpty(model.Name))
+        {
+            return RedirectToAction("Index");
+        }
+
+        if (HttpContext.Session.GetString("Name") == null)
+        {
+            HttpContext.Session.SetString("Name", model.Name);
+            HttpContext.Session.SetInt32("Value", 22);
+        }
+
+        int value = HttpContext.Session.GetInt32("Value").Value;
+
+        switch (model.Operation)
+        {
+            case "+":
+                value += 1;
+                break;
+            case "-":
+                value -= 1;
+                break;
+            case "x":
+                value *= 2;
+                break;
+            case "random":
+                Random random = new Random();
+                value += random.Next(1, 11);
+                break;
+        }
+
+        HttpContext.Session.SetInt32("Value", value);
+        model.Value = value; // Set the updated value in the model
+
+        return View(model);
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
 }
