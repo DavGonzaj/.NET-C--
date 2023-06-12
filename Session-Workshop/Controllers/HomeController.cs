@@ -47,9 +47,9 @@ public class HomeController : Controller
         }
 
         HttpContext.Session.SetInt32("Value", value);
-        model.Value = value; // Set the updated value in the model
+        // model.Value = value; // Set the updated value in the model
 
-        return View(model);
+        return View("Dashboard");
     }
 
 }

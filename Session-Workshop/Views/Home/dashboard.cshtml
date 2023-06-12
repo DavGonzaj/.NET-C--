@@ -6,7 +6,7 @@
 
 <h2>Welcome, @Context.Session.GetString("Name")!</h2>
 
-<p>Current Value: @Model.Value</p>
+<p>Current Value:  @Context.Session.GetInt32("Value")</p>
 
 <form method="post" asp-action="Dashboard" asp-model="Model">
     <button type="submit" name="Operation" value="+">+ 1</button>
