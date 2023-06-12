@@ -8,48 +8,56 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult Dashboard(DashboardModel model)
+    public IActionResult Dashboard(string name, string operation)
     {
-        if (model.Operation == "logout")
+        if (operation == "logout")
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index");
         }
 
-        if (string.IsNullOrEmpty(model.Name))
+        if (string.IsNullOrEmpty(name))
         {
             return RedirectToAction("Index");
         }
 
         if (HttpContext.Session.GetString("Name") == null)
         {
-            HttpContext.Session.SetString("Name", model.Name);
+            HttpContext.Session.SetString("Name", name);
             HttpContext.Session.SetInt32("Value", 22);
         }
 
         int value = HttpContext.Session.GetInt32("Value").Value;
 
-        switch (model.Operation)
+        if (operation == "+")
         {
-            case "+":
-                value += 1;
-                break;
-            case "-":
-                value -= 1;
-                break;
-            case "x":
-                value *= 2;
-                break;
-            case "random":
-                Random random = new Random();
-                value += random.Next(1, 11);
-                break;
+            value += 1;
+        }
+        else if (operation == "-")
+        {
+            value -= 1;
+        }
+        else if (operation == "x")
+        {
+            value *= 2;
+        }
+        else if (operation == "random")
+        {
+            Random random = new Random();
+            value += random.Next(1, 11);
         }
 
         HttpContext.Session.SetInt32("Value", value);
-        // model.Value = value; // Set the updated value in the model
 
-        return View("Dashboard");
+        // Create a new instance of DashboardModel and set the updated value
+        var model = new DashboardModel
+        {
+            Name = name,
+            Value = value
+        };
+
+        return View("Dashboard", model);
     }
+
 
 }
