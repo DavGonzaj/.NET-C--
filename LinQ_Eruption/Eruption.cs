@@ -26,4 +26,9 @@ public class Eruption
             Type: {Type}
             ";
     }
+
+    internal List<Eruption> ToList()
+    {
+        throw new NotImplementedException();
+    }
 }
