@@ -49,15 +49,19 @@ public class HomeController : Controller
 
         HttpContext.Session.SetInt32("Value", value);
 
-        // Create a new instance of DashboardModel and set the updated value
+        // Retrieve the updated value from the session
+        int updatedValue = HttpContext.Session.GetInt32("Value").Value;
+
+        // Create a new instance of DashboardModel with the updated value
         var model = new DashboardModel
         {
             Name = name,
-            Value = value
+            Value = updatedValue
         };
 
         return View("Dashboard", model);
     }
+
 
 
 }
