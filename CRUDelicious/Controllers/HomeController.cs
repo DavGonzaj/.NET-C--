@@ -7,7 +7,7 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     // Add a private variable of type MyContext (or whatever you named your context file)
-    private MyContext _context;
+    private MyContext db;
     // Here we can "inject" our context service into the constructor 
     // The "logger" was something that was already in our code, we're just adding around it   
     public HomeController(ILogger<HomeController> logger, MyContext context)
@@ -16,13 +16,13 @@ public class HomeController : Controller
         // When our HomeController is instantiated, it will fill in _context with context
         // Remember that when context is initialized, it brings in everything we need from DbContext
         // which comes from Entity Framework Core
-        _context = context;
+        db = context;
     }
     [HttpGet("")]
     public IActionResult Index()
     {
         // Now any time we want to access our database we use _context   
-        List<Dish> AllDishes = _context.Dishes.ToList();
+        List<Dish> AllDishes = db.Dishes.ToList();
         return View();
     }
 }

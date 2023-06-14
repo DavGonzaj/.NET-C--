@@ -15,5 +15,7 @@
     </div>
 
     <img src="@post.ImgUrl" alt="related to post" class="card-img-bottom">
+    <a asp-controller="Home" asp-action="ViewPost" asp-route-postId="@post.PostId">View Post</a>
+    <a asp-controller="Home" asp-action="Edit" asp-route-postId="@post.PostId">Edit Post</a>
      </div>
 } 
