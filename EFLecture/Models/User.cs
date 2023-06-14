@@ -21,6 +21,7 @@ public class User
     public string Password { get; set; }
 
     [NotMapped]//don't add to DB
+    [Compare("Password", ErrorMessage = "must match password.")]
     public string PasswordConfirm { get; set; }
 
     public DateTime CreateAt { get; set; } = DateTime.Now;
