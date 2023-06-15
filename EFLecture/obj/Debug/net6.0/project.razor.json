@@ -18374,6 +18374,11 @@
   "RootNamespace": "EFLecture",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\EFLecture\\Views\\Home\\_Register.cshtml",
+      "TargetPath": "Views\\Home\\_Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\EFLecture\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -18386,6 +18391,11 @@
     {
       "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\EFLecture\\Views\\Home\\Edit.cshtml",
       "TargetPath": "Views\\Home\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\EFLecture\\Views\\Home\\_Login.cshtml",
+      "TargetPath": "Views\\Home\\_Login.cshtml",
       "FileKind": "mvc"
     },
     {

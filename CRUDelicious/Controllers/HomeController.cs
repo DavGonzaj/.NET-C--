@@ -1,28 +1,141 @@
-﻿// Using statements
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using YourProjectName.Models;
-namespace YourProjectName.Controllers;
+using Microsoft.AspNetCore.Mvc.Filters;
+using CRUDelicious.Models;
+using Microsoft.AspNetCore.Identity;
+
+namespace CRUDelicious.Controllers;
+
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    // Add a private variable of type MyContext (or whatever you named your context file)
+    //conncection to our database "db"
     private MyContext db;
-    // Here we can "inject" our context service into the constructor 
-    // The "logger" was something that was already in our code, we're just adding around it   
+
     public HomeController(ILogger<HomeController> logger, MyContext context)
     {
         _logger = logger;
-        // When our HomeController is instantiated, it will fill in _context with context
-        // Remember that when context is initialized, it brings in everything we need from DbContext
-        // which comes from Entity Framework Core
         db = context;
     }
     [HttpGet("")]
     public IActionResult Index()
     {
-        // Now any time we want to access our database we use _context   
-        List<Dish> AllDishes = db.Dishes.ToList();
+        return View("Index");
+    }
+
+
+    [HttpGet("/dishes")]
+    public IActionResult AllDishes()
+    {
+        List<Dish> allDishes = db.Dishes.ToList();
+        return View("AllDishes", allDishes);
+    }
+
+    [HttpGet("dishes/new")]
+    public IActionResult NewDish()
+    {
+        return View("New");
+    }
+
+    [HttpPost("dishes/create")]
+    public IActionResult CreateDish(Dish newDish)
+    {
+        if (!ModelState.IsValid)
+        {
+            //send user back to form so they can see and fix erros
+            return View("New");
+        }
+
+        db.Dishes.Add(newDish);
+        //db doesn't update until we run save changes
+        //after SaveChanges, our newPost object now has it's PostID updated from db auto generated id
+        db.SaveChanges();
+
+        return RedirectToAction("AllDishes");
+    }
+
+    // view one
+    [HttpGet("dishes/{dishId}")]
+    public IActionResult ViewDish(int dishId)
+    {
+        Dish? dish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
+        if (dish == null)
+        {
+            return RedirectToAction("AllDishes");
+        }
+        return View("Details", dish);
+    }
+
+    [HttpPost("dishes/{dishId}/delete")]
+    public IActionResult DeleteDish(int dishId)
+    {
+        Dish? dish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
+        if (dish != null)
+        {
+            db.Dishes.Remove(dish);
+            db.SaveChanges();
+        }
+        return RedirectToAction("AllDishes");
+    }
+
+    //edit post
+    [HttpGet("dishes/{dishId}/edit")]
+    public IActionResult Edit(int dishId)
+    {
+        Dish? dish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
+        if (dish == null)
+        {
+            return RedirectToAction("AllDishes");
+        }
+
+        return View("Edit", dish);
+
+    }
+
+    //update after edit
+    [HttpPost("dishes/{dishId}/edit")]
+    public IActionResult UpdateDish(int dishId, Dish updatedDish)
+    {
+        if (!ModelState.IsValid)
+        {
+            // Post? originalPost = db.Posts.FirstOrDefault(post => post.PostId == postId);
+            // return View("Edit", originalPost);
+            //we can replace the previous two lines with the following
+            //this runs the code within the EditPost function, without creating a new re/res cycle
+            //for the edit on the lecture, in order for it to work, the View() function in the Edit method !!!CANNOT!!! default the cshtml file
+            return Edit(dishId);//this runs all logic from our edit function but wont create a new response cycle
+        }
+
+        Dish? dbDish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
+
+        if (dbDish == null)
+        {
+            return RedirectToAction("AllDishes");
+        }
+
+        dbDish.Name = updatedDish.Name;
+        dbDish.Chef = updatedDish.Chef;
+        dbDish.Tastiness = updatedDish.Tastiness;
+        dbDish.Calories = updatedDish.Calories;
+        dbDish.Description = updatedDish.Description;
+        dbDish.UpdatedAt = DateTime.Now;
+
+        // db.Posts.Update(dbPost);
+        db.SaveChanges();
+
+        return RedirectToAction("ViewDish", new { dishId = dbDish.DishId });
+    }
+    public IActionResult Privacy()
+    {
         return View();
     }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
 }
+
+
+

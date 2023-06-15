@@ -1,6 +1,6 @@
 #pragma warning disable CS8618
 using System.ComponentModel.DataAnnotations;
-namespace YourProjectName.Models;
+namespace CRUDelicious.Models;
 public class Dish
 {
     [Key]

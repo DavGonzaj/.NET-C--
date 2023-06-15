@@ -1,0 +1,35 @@
+@model List<Dish>
+<a asp-controller="Home" asp-action="NewPost">Create New Post</a>
+
+@foreach (Dish dish in Model)
+{
+    <div class="card shadow rounded mx-auto w-75 mb-3">
+      <h4 class="card-title text-center bg-dark text-light py-2 rounded-top">
+            @dish.Name
+      </h4>
+
+      <div class="card-body">
+        <p class="card-text">@dish.Chef</p>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text" type="number">@dish.Tastiness</p>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text" type="number">@dish.Calories</p>
+      </div>
+
+      <div class="card-body">
+        <p class="card-text" type="text">@dish.Description</p>
+        <small class="text-muted">Submitted On: @dish.CreatedAt</small>
+      </div>
+
+      <a asp-controller="Home" asp-action="ViewDish" asp-route-dishId="@dish.DishId"
+        >View Dish</a
+      >
+      <a asp-controller="Home" asp-action="Edit" asp-route-dishId="@dish.DishId"
+        >Edit Dish</a
+      >
+    </div>
+} 

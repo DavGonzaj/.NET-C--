@@ -1,7 +1,7 @@
 // Add this using statement
 using Microsoft.EntityFrameworkCore;
 // You will need access to your models for your context file
-using YourProjectName.Models;
+using CRUDelicious.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 // Create a variable to hold your connection string
