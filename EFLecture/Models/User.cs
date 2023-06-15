@@ -28,6 +28,17 @@ public class User
     public DateTime CreateAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
+    /****************************************************
+    Relationship properties below
+
+    Foreign Keys: id of a different (foreign) model
+
+    Navigation props:
+        data type is related model
+        MUST use .Include for the nav prop data to be inlcuded via SQL JOIN
+    ****************************************************/
+    public List<Post> CreatedPosts { get; set; } = new List<Post>();
+
 }
 
 public class UniqueEmailAttribute : ValidationAttribute

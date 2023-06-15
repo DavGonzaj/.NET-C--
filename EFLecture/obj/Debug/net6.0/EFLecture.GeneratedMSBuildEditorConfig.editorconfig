@@ -15,24 +15,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = c:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\EFLecture
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Home/AllPosts.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbGxQb3N0cy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Home/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Home/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Home/New.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Home/Privacy.cshtml]
@@ -45,6 +29,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Home/_Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Post/AllPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxBbGxQb3N0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Post/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Post/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Post/New.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdFxOZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/EFLecture/Views/Shared/Error.cshtml]
