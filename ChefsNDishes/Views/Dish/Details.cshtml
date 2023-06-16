@@ -1,0 +1,20 @@
+@model Dish
+
+<h4 class="card-title text-center bg-dark text-light py-2 rounded-top">
+  @Model.Name
+</h4>
+<p class="card-text">@Model.Chef</p>
+<p class="card-text" type="number">@Model.Tastiness</p>
+<p class="card-text" type="number">@Model.Calories</p>
+<p class="card-text" type="text">@Model.Description</p>
+
+<form
+  asp-controller="Dish"
+  asp-action="DeletePost"
+  asp-route-dishId="@Model.DishId"
+  method="POST"
+>
+  <button class="btn btn-primary btn-danger">Delete</button>
+</form>
+
+
