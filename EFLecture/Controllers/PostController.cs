@@ -22,7 +22,7 @@ public class PostController : Controller
     [HttpGet("/posts")]
     public IActionResult AllPosts()
     {
-        List<Post> allPosts = db.Posts.Include(post => post.Author).ToList();
+        List<Post> allPosts = db.Posts.Include(post => post.Author).Include(post => post.UserLikes).ToList();
         return View("AllPosts", allPosts);
     }
 
@@ -55,7 +55,7 @@ public class PostController : Controller
     [HttpGet("posts/{postId}")]
     public IActionResult ViewPost(int postId)
     {
-        Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
+        Post? post = db.Posts.Include(post => post.Author).Include(post => post.UserLikes).ThenInclude(like => like.User).FirstOrDefault(post => post.PostId == postId);
         if (post == null)
         {
             return RedirectToAction("AllPosts");
@@ -119,6 +119,27 @@ public class PostController : Controller
         db.SaveChanges();
 
         return RedirectToAction("ViewPost", new { postId = dbPost.PostId });
+    }
+    [HttpPost("post/{postId}/like")]
+    public IActionResult LikePost(int postId)
+    {
+        UserPostLike? existingLike = db.UserPostLikes.FirstOrDefault(like => like.UserId == HttpContext.Session.GetInt32("UUID") && like.PostId == postId);
+        if (existingLike == null)
+        {
+            UserPostLike newLike = new UserPostLike()
+            {
+                PostId = postId,
+                UserId = (int)HttpContext.Session.GetInt32("UUID")
+            };
+
+            db.UserPostLikes.Add(newLike);
+        }
+        else
+        {
+            db.UserPostLikes.Remove(existingLike);
+        }
+        db.SaveChanges();
+        return RedirectToAction("AllPosts");
     }
     public IActionResult Privacy()
     {

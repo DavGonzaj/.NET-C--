@@ -34,4 +34,6 @@ public class Post
 
     public int UserId { get; set; } //this foreign key HAS TO MATCH PRIMARY KEY property name
     public User? Author { get; set; }
+    public List<UserPostLike> UserLikes { get; set; } = new List<UserPostLike>();
+
 }

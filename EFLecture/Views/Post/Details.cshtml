@@ -6,8 +6,11 @@
 
 <form asp-controller="Post" asp-action="DeletePost" asp-route-postId="@Model.PostId" method="POST">
 
-<button class="btn btn-primary btn-danger">Delete</button>
+    <button class="btn btn-primary btn-danger">Delete</button>
 
 </form>
 
-
+@foreach (UserPostLike like in Model.UserLikes)
+{
+    <p>@like.User?.Name</p>
+}
