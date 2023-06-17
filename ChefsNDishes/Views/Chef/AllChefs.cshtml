@@ -1,0 +1,30 @@
+@model List<Chef>
+<a asp-controller="Chef" asp-action="NewChef">Create New Post</a>
+
+@foreach (Chef chef in Model)
+{
+    <div class="card shadow rounded mx-auto w-75 mb-3">
+      <h1 class="card-title text-center bg-dark text-light">
+        Check out our chefs!
+      </h1>
+      <h4 class="card-title text-center bg-dark text-light py-2 rounded-top">
+            @chef.FirstName @chef.LastName
+      </h4>
+
+      <div class="card-body">
+        <p class="card-text" type="date">@chef.Birthday</p>
+        <small class="text-muted">Submitted On: @chef.CreatedAt</small>
+      </div>
+
+      <a
+        asp-controller="Chef"
+        asp-action="ViewChef"
+        asp-route-chefId="@chef.ChefId"
+      >
+        View Chef
+      </a>
+      <a asp-controller="Chef" asp-action="Edit" asp-route-chefId="@chef.ChefId"
+        >Edit Chef
+      </a>
+    </div>
+} 

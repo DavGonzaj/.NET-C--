@@ -6,88 +6,88 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChefsNDishes.Controllers;
-public class DishController : Controller
+public class ChefController : Controller
 {
-    private readonly ILogger<DishController> _logger;
+    private readonly ILogger<ChefController> _logger;
     //conncection to our database "db"
     private MyContext db;
 
-    public DishController(ILogger<DishController> logger, MyContext context)
+    public ChefController(ILogger<ChefController> logger, MyContext context)
     {
         _logger = logger;
         db = context;
     }
-    [HttpGet("/dishes")]
-    public IActionResult AllDishes()
+    [HttpGet("/chefs")]
+    public IActionResult AllChefs()
     {
-        List<Dish> allDishes = db.Dishes.ToList();
-        return View("AllDishes", allDishes);
+        List<Chef> allChefs = db.Chefs.Include(chef => chef.CreatedDishes).ToList();
+        return View("AllChefs", allChefs);
     }
 
-    [HttpGet("dishes/new")]
-    public IActionResult NewDish()
+    [HttpGet("chefs/new")]
+    public IActionResult NewChef()
     {
-        return View("New");
+        return View("NewChef");
     }
 
-    [HttpPost("dishes/create")]
-    public IActionResult CreateDish(Dish newDish)
+    [HttpPost("chefs/create")]
+    public IActionResult CreateChef(Chef newChef)
     {
         if (!ModelState.IsValid)
         {
             //send user back to form so they can see and fix erros
-            return View("New");
+            return View("NewChef");
         }
 
-        db.Dishes.Add(newDish);
+        db.Chefs.Add(newChef);
         //db doesn't update until we run save changes
         //after SaveChanges, our newPost object now has it's PostID updated from db auto generated id
         db.SaveChanges();
 
-        return RedirectToAction("AllDishes");
+        return RedirectToAction("AllChefs");
     }
 
     // view one
-    [HttpGet("dishes/{dishId}")]
-    public IActionResult ViewDish(int dishId)
+    [HttpGet("chefs/{chefId}")]
+    public IActionResult ViewChef(int chefId)
     {
-        Dish? dish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
-        if (dish == null)
+        Chef? chef = db.Chefs.FirstOrDefault(chef => chef.ChefId == chefId);
+        if (chef == null)
         {
-            return RedirectToAction("AllDishes");
+            return RedirectToAction("AllChefs");
         }
-        return View("Details", dish);
+        return View("ChefDetails", chef);
     }
 
-    [HttpPost("dishes/{dishId}/delete")]
-    public IActionResult DeleteDish(int dishId)
+    [HttpPost("chefs/{chefId}/delete")]
+    public IActionResult DeleteChef(int chefId)
     {
-        Dish? dish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
-        if (dish != null)
+        Chef? chef = db.Chefs.FirstOrDefault(chef => chef.ChefId == chefId);
+        if (chef != null)
         {
-            db.Dishes.Remove(dish);
+            db.Chefs.Remove(chef);
             db.SaveChanges();
         }
-        return RedirectToAction("AllDishes");
+        return RedirectToAction("AllChefs");
     }
 
     //edit post
-    [HttpGet("dishes/{dishId}/edit")]
-    public IActionResult Edit(int dishId)
+    [HttpGet("chefs/{chefId}/edit")]
+    public IActionResult Edit(int chefId)
     {
-        Dish? dish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
-        if (dish == null)
+        Chef? chef = db.Chefs.FirstOrDefault(chef => chef.ChefId == chefId);
+        if (chef == null)
         {
-            return RedirectToAction("AllDishes");
+            return RedirectToAction("AllChefs");
         }
 
-        return View("Edit", dish);
+        return View("EditChef", chef);
 
     }
 
     //update after edit
-    [HttpPost("dishes/{dishId}/edit")]
-    public IActionResult UpdateDish(int dishId, Dish updatedDish)
+    [HttpPost("chefs/{chefId}/edit")]
+    public IActionResult UpdateChef(int chefId, Chef updatedChef)
     {
         if (!ModelState.IsValid)
         {
@@ -96,27 +96,25 @@ public class DishController : Controller
             //we can replace the previous two lines with the following
             //this runs the code within the EditPost function, without creating a new re/res cycle
             //for the edit on the lecture, in order for it to work, the View() function in the Edit method !!!CANNOT!!! default the cshtml file
-            return Edit(dishId);//this runs all logic from our edit function but wont create a new response cycle
+            return Edit(chefId);//this runs all logic from our edit function but wont create a new response cycle
         }
 
-        Dish? dbDish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
+        Chef? dbChef = db.Chefs.FirstOrDefault(chef => chef.ChefId == chefId);
 
-        if (dbDish == null)
+        if (dbChef == null)
         {
-            return RedirectToAction("AllDishes");
+            return RedirectToAction("AllChefs");
         }
 
-        dbDish.Name = updatedDish.Name;
-        dbDish.Chef = updatedDish.Chef;
-        dbDish.Tastiness = updatedDish.Tastiness;
-        dbDish.Calories = updatedDish.Calories;
-        dbDish.Description = updatedDish.Description;
-        dbDish.UpdatedAt = DateTime.Now;
+        dbChef.FirstName = updatedChef.FirstName;
+        dbChef.LastName = updatedChef.LastName;
+        dbChef.Birthday = updatedChef.Birthday;
+        dbChef.UpdatedAt = DateTime.Now;
 
         // db.Posts.Update(dbPost);
         db.SaveChanges();
 
-        return RedirectToAction("ViewDish", new { dishId = dbDish.DishId });
+        return RedirectToAction("ViewChef", new { chefId = dbChef.ChefId });
     }
     public IActionResult Privacy()
     {

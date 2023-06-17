@@ -15,19 +15,20 @@ public class Chef
     public DateTime Birthday { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
+    public List<Chef> CreatedDishes { get; set; } = new List<Chef>();
 
-    public class CheckChefAge : ValidationAttribute
-    {
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            int age = CalculateAge((DateTime)value);
-            if (age < 18)
-            {
-                return new ValidationResult("Chefs must be at least 18 years old!");
-            }
-            return ValidationResult.Success;
-        }
-    }
+    // public class CheckChefAge : ValidationAttribute
+    // {
+    //     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    //     {
+    //         int age = CalculateAge((DateTime)value);
+    //         if (age < 18)
+    //         {
+    //             return new ValidationResult("Chefs must be at least 18 years old!");
+    //         }
+    //         return ValidationResult.Success;
+    //     }
+    // }
 
     public static int CalculateAge(DateTime dob)
     {

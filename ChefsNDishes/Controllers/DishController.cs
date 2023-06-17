@@ -107,7 +107,7 @@ public class DishController : Controller
         }
 
         dbDish.Name = updatedDish.Name;
-        dbDish.Chef = updatedDish.Chef;
+        // dbDish.Chef = updatedDish.Chef;
         dbDish.Tastiness = updatedDish.Tastiness;
         dbDish.Calories = updatedDish.Calories;
         dbDish.Description = updatedDish.Description;

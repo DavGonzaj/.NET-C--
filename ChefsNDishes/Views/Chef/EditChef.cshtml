@@ -1,0 +1,51 @@
+@model Chef
+<a asp-controller="Home" asp-action="Index">Home</a>
+
+<div class="container w-75 mx-auto">
+  <h2 class="text-center">Edit Chef</h2>
+  <form
+    class="shadow p-3 rounded"
+    asp-controller="Chef"
+    asp-action="UpdateChef"
+    asp-route-chefId="@Model.ChefId"
+    method="POST"
+  >
+    <div class="mb-3">
+      <label asp-for="FirstName"></label>
+      <span
+        asp-validation-for="FirstName"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input
+        class="form-control"
+        asp-for="FirstName"
+        value="@Model.FirstName"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="LastName"></label>
+      <span
+        asp-validation-for="LastName"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input class="form-control" asp-for="LastName" value="@Model.LastName" />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Birthday"></label>
+      <span
+        asp-validation-for="Birthday"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input
+        class="form-control"
+        type="date"
+        asp-for="Birthday"
+        value="@Model.Birthday"
+      />
+    </div>
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>
+

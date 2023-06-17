@@ -1,0 +1,43 @@
+@model Chef
+<a asp-controller="Home" asp-action="Index">Home</a>
+
+<div class="container w-75 mx-auto">
+  <h2 class="text-center">New Chef</h2>
+  <form
+    class="shadow p-3 rounded"
+    asp-controller="Chef"
+    asp-action="CreateChef"
+    method="POST"
+  >
+    <div class="mb-3">
+      <label asp-for="FirstName"></label>
+      <span
+        asp-validation-for="FirstName"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input class="form-control" asp-for="FirstName" />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="LastName"></label>
+      <span
+        asp-validation-for="LastName"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input class="form-control" asp-for="LastName" />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Birthday"></label>
+      <span
+        asp-validation-for="Birthday"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input class="form-control" asp-for="Birthday" type="date" />
+    </div>
+
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
