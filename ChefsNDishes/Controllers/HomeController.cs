@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using ChefsNDishes.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace CRUDelicious.Controllers;
+namespace ChefsNDishes.Controllers;
 
 public class HomeController : Controller
 {

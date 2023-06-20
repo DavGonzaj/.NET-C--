@@ -1,0 +1,21 @@
+@model Product
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>add product here</h2>
+<div class="text-center">
+    <div>
+    <form asp-action="CreateProduct" asp-controller="Home">
+    <label asp-for="ProductName"></label>
+    <span asp-validation-for="ProductName"></span>
+    <input asp-for="ProductName">
+    <label asp-for="ProductDescription"></label>
+    <span asp-validation-for="ProductDescription"></span>
+    <input asp-for="ProductDescription">
+    <label asp-for="Price"></label>
+    <span asp-validation-for="Price"></span>
+    <input asp-for="Price" type="number">
+    <button type="submit">Add Product</button>
+        </form>
+    </div>
+</div>

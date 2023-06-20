@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+  <a href="product" class="btn btn-info">All Products</a>
+    <a href="categories" class="btn btn-info">AllCategories</a>
+
+  <div>
+
+<div class="row mt-5">
+
+    <div class="col-md">
+@await Html.PartialAsync("_ProductForm")
+    </div>
+    <div class="col-md">
+@await Html.PartialAsync("_ProductView")
+    </div>
+
+@* 
+    <div class="col-md">
+@await Html.PartialAsync("_Login")
+    </div> *@
+
+</div>
