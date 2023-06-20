@@ -21,8 +21,8 @@ public class HomeController : Controller
     public IActionResult Index()
     {
         List<Product> allProducts = db.Products.ToList();
-        ViewBag.allProducts = db.Products.ToList();
-        return View("Index");
+        // ViewBag.allProducts = db.Products.ToList();
+        return View("Index", allProducts);
     }
     [HttpPost("products")]
     public IActionResult CreateProduct(Product newProduct)
@@ -56,23 +56,37 @@ public class HomeController : Controller
     public IActionResult Categories()
     {
         List<Category> allCategories = db.Categories.ToList();
-        ViewBag.allCategories = db.Categories.ToList();
-        return View("Categories");
+        // ViewBag.allCategories = db.Categories.ToList();
+        return View("Categories", allCategories);
     }
     [HttpPost("categories")]
     public IActionResult CreateCategory(Category newCategory)
     {
         if (!ModelState.IsValid)
         {
-            return View("NewCategory");
+            List<Category> allCategories = db.Categories.ToList();
+            // ViewBag.allCategories = db.Categories.ToList();
+            return View("Categories", allCategories);
         }
         db.Categories.Add(newCategory);
         //db doesn't update until we run save changes
         //after SaveChanges, our newPost object now has it's PostID updated from db auto generated id
         db.SaveChanges();
-        List<Category> allCategories = db.Categories.ToList();
+        // List<Category> allCategories = db.Categories.ToList();
 
-        return RedirectToAction("Index", allCategories);
+        return RedirectToAction("Categories");
+    }
+    [HttpGet("categories/{id}")]
+    public IActionResult ViewCategory(int id)
+    {
+        Category? oneCategory = db.Categories.FirstOrDefault(oneCat => oneCat.CategoryId == id);
+
+        if (oneCategory == null)
+        {
+            return RedirectToAction("Categories"); // Optionally handle when the Category is not found
+        }
+
+        return View("OneCat", oneCategory);
     }
     public IActionResult Privacy()
     {

@@ -4,17 +4,20 @@
 }
 <h2>add product here</h2>
 <div class="text-center">
-    <div>
+    <div class="prodform">
     <form asp-action="CreateProduct" asp-controller="Home">
-    <label asp-for="ProductName"></label>
+    <label asp-for="ProductName"></label> 
     <span asp-validation-for="ProductName"></span>
     <input asp-for="ProductName">
+    <br>
     <label asp-for="ProductDescription"></label>
     <span asp-validation-for="ProductDescription"></span>
     <input asp-for="ProductDescription">
+    <br>
     <label asp-for="Price"></label>
     <span asp-validation-for="Price"></span>
     <input asp-for="Price" type="number">
+    <br>
     <button type="submit">Add Product</button>
         </form>
     </div>

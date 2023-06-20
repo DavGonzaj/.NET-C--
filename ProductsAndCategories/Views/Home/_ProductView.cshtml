@@ -3,7 +3,7 @@
 <h3>
   <ul>
     <li>
-            @foreach (Product product in ViewBag.allProducts)
+            @foreach (Product product in Model)
             {
 
           <p><a asp-controller="Home" asp-action="ViewProduct" asp-route-id="@product.ProductId">@product.ProductName</a></p>

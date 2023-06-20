@@ -1,0 +1,14 @@
+@model List<Category>
+
+<h2>List of categories</h2>
+<h2>
+    <ul>
+        <li>
+            @foreach (Category categories in Model)
+            {
+              <p><a asp-controller="Home" asp-action="ViewCategory" asp-route-id="@categories.CategoryId">@categories.CategoryName</a></p>
+
+            }
+        </li>
+    </ul>
+</h2>

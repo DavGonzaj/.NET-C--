@@ -1,2 +1,6 @@
-<h1>Categories view brah</h1>
-<div class="col-md">@await Html.PartialAsync("_CaForm")</div>
+@model List<Category>
+<h1>Categories view</h1>
+<div class="col-md">@await Html.PartialAsync("_CatForm", new Category())</div>
+<div class="col-md">@await Html.PartialAsync("_CatView", @Model)</div>
+
+
