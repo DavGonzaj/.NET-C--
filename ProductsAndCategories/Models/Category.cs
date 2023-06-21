@@ -10,6 +10,6 @@ public class Category
     public string CategoryName { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
-    public List<Association> Products { get; set; } = new List<Association>();
+    public List<Association> Associations { get; set; } = new List<Association>();
     // public List<Association> Associations {get; set;} = new List<Association>();
 }

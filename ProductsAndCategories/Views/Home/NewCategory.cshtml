@@ -1,0 +1,16 @@
+@model Category
+<h2>all the list of categories here</h2>
+
+<h2>lookin at one product!</h2>
+<h3>@Model.CategoryName</h3>
+
+
+    <div class="col-md">
+    @await Html.PartialAsync("_ListOfCat", new List<Category>())
+    </div>
+
+
+@* <div class="col-md">
+@await Html.PartialAsync("_CatView")
+    </div> *@
+</div>

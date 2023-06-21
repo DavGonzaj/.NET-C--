@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using ProductsAndCategories.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProductsAndCategories.Controllers;
 
@@ -29,7 +30,7 @@ public class HomeController : Controller
     {
         if (!ModelState.IsValid)
         {
-            return View("NewProduct");
+            return View("Index", db.Products.ToList());
         }
         db.Products.Add(newProduct);
         //db doesn't update until we run save changes
@@ -43,7 +44,8 @@ public class HomeController : Controller
     [HttpGet("products/{id}")]
     public IActionResult ViewProduct(int id)
     {
-        Product? oneProduct = db.Products.FirstOrDefault(oneProd => oneProd.ProductId == id);
+        Product? oneProduct = db.Products.Include(prod => prod.Associations)
+        .ThenInclude(ass => ass.Category).FirstOrDefault(oneProd => oneProd.ProductId == id);
 
         if (oneProduct == null)
         {
@@ -51,6 +53,34 @@ public class HomeController : Controller
         }
 
         return View("OneProduct", oneProduct);
+    }
+    [HttpPost("products/addcategory")]
+    public IActionResult AddCatToProd(int CategoryId, int ProductId)
+    {
+        Product? oneProd = db.Products
+        .Include(prod => prod.Associations)
+        .FirstOrDefault(cate => cate.ProductId == ProductId);
+        if (oneProd == null)
+        {
+            return RedirectToAction("OneProduct");
+        }
+        Category? oneCat = db.Categories.FirstOrDefault(cat => cat.CategoryId == CategoryId);
+        if (oneCat == null)
+        {
+            return RedirectToAction("OneProduct");
+        }
+        if (oneCat.Associations.Any(a => a.ProductId == ProductId))
+        {
+            return RedirectToAction("OneProduct", new { id = ProductId });
+        }
+        Association newAssoc = new Association
+        {
+            Product = oneProd,
+            Category = oneCat
+        };
+        db.Associations.Add(newAssoc);
+        db.SaveChanges();
+        return RedirectToAction("ViewProduct", new { id = ProductId });
     }
     [HttpGet("categories")]
     public IActionResult Categories()
@@ -79,7 +109,8 @@ public class HomeController : Controller
     [HttpGet("categories/{id}")]
     public IActionResult ViewCategory(int id)
     {
-        Category? oneCategory = db.Categories.FirstOrDefault(oneCat => oneCat.CategoryId == id);
+        Category? oneCategory = db.Categories.Include(cat => cat.Associations)
+        .ThenInclude(ass => ass.Product).FirstOrDefault(oneCat => oneCat.CategoryId == id);
 
         if (oneCategory == null)
         {
@@ -87,6 +118,39 @@ public class HomeController : Controller
         }
 
         return View("OneCat", oneCategory);
+    }
+    // [HttpPost("categories/assproduct")]
+    // public IActionResult AddProdTocat(int ProductId, int CategoryId)
+    // {
+    //     Category? oneCat
+    // }
+    [HttpPost("categories/addproduct")]
+    public IActionResult AddProdToCat(int ProductId, int CategoryId)
+    {
+        Category? oneCat = db.Categories
+            .Include(cat => cat.Associations)
+            .FirstOrDefault(prod => prod.CategoryId == CategoryId);
+        if (oneCat == null)
+        {
+            return RedirectToAction("Categories");
+        }
+        Product? oneProd = db.Products.FirstOrDefault(prod => prod.ProductId == ProductId);
+        if (oneProd == null)
+        {
+            return RedirectToAction("Categories");
+        }
+        if (oneProd.Associations.Any(a => a.CategoryId == CategoryId))
+        {
+            return RedirectToAction("ViewCategory", new { id = CategoryId });
+        }
+        Association newAssoc = new Association
+        {
+            Product = oneProd,
+            Category = oneCat
+        };
+        db.Associations.Add(newAssoc);
+        db.SaveChanges();
+        return RedirectToAction("ViewCategory", new { id = CategoryId });
     }
     public IActionResult Privacy()
     {

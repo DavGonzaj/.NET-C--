@@ -2,3 +2,42 @@
 <h2>@Model.CategoryName</h2>
 
 
+<div class="row mt-5">
+<div>
+<table>
+    <tbody>
+        <h3>Products in this category</h3>
+        @foreach(Association association in Model.Associations)
+        if(association.Product != null)
+        {
+            <tr>
+            <td>
+                @association.Product.ProductName
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+<div>
+<form asp-action="AddProdToCat"
+asp-controller="Home"
+method="post"
+>
+<input type="hidden"
+name="CategoryId"
+value="@Model.CategoryId">
+    <select name="ProductId">
+        @foreach(Product product in ViewBag.allProducts)
+        {
+            if(!Model.Associations.Any(a => a.ProductId == product.ProductId))
+            {
+        <option value="@product.ProductId">@product.ProductName</option>
+            }
+        }
+    </select>
+    <button>Add Product</button>
+</form>
+</div>
+</div>
