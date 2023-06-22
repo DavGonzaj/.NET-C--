@@ -50,6 +50,68 @@ public class WeddingController : Controller
 
         return RedirectToAction("AllWeddings");
     }
+
+    // view one
+    [HttpGet("weddings/{weddingId}")]
+    public IActionResult ViewOne(int weddingId)
+    {
+        Wedding? oneWedding = db.Weddings.Include(wedding => wedding.Planner).FirstOrDefault(wedding => wedding.WeddingId == weddingId);
+        if (oneWedding == null)
+        {
+            return RedirectToAction("AllWeddings");
+        }
+        return View("Details", oneWedding);
+    }
+    //edit one
+    [HttpGet("weddings/{weddingId}/edit")]
+    public IActionResult EditWedding(int weddingId)
+    {
+        Wedding? oneWedding = db.Weddings.FirstOrDefault(wedding => wedding.WeddingId == weddingId);
+        if (oneWedding == null)
+        {
+            return RedirectToAction("AllWeddings");
+        }
+        return View("Edit", oneWedding);
+    }
+
+    //update one
+    [HttpPost("/weddings/{weddingId}/update")]
+    public IActionResult UpdateWedding(int weddingId, Wedding editedWedding)
+    {
+        if (!ModelState.IsValid)
+        {
+            return EditWedding(weddingId);
+        }
+        Wedding? dbWedding = db.Weddings.FirstOrDefault(wedding => wedding.WeddingId == weddingId);
+
+        if (dbWedding == null)
+        {
+            return RedirectToAction("AllWeddings");
+        }
+
+        dbWedding.WedOne = editedWedding.WedOne;
+        dbWedding.WedTwo = editedWedding.WedTwo;
+        dbWedding.WedDate = editedWedding.WedDate;
+        dbWedding.WedAddress = editedWedding.WedAddress;
+        dbWedding.Updated_at = DateTime.Now;
+
+        db.SaveChanges();
+
+        return RedirectToAction("ViewOne", new { weddingId = weddingId });
+
+    }
+    // delete
+    [HttpPost("weddings/{weddingId}/delete")]
+    public IActionResult DeleteWedding(int weddingId)
+    {
+        Wedding? wedding = db.Weddings.FirstOrDefault(wedding => wedding.WeddingId == weddingId);
+        if (wedding != null)
+        {
+            db.Weddings.Remove(wedding);
+            db.SaveChanges();
+        }
+        return RedirectToAction("AllWeddings");
+    }
 }
 
 // Name this anything you want with the word "Attribute" at the end

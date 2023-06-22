@@ -2,11 +2,12 @@
 @* <a asp-controller="Home" asp-action="Index">Home</a> *@
 
 <div class="container w-75 mx-auto">
-  <h2 class="text-center">New Wedding</h2>
+  <h2 class="text-center">Edit Wedding</h2>
   <form
     class="shadow p-3 rounded"
     asp-controller="Wedding"
-    asp-action="CreateWedding"
+    asp-action="UpdateWedding"
+    asp-route-weddingId="@Model.WeddingId"
     method="POST"
   >
     <div class="mb-3">
@@ -15,7 +16,7 @@
         asp-validation-for="WedOne"
         class="text-danger font-weight-bold"
       ></span>
-      <input class="form-control" asp-for="WedOne" />
+      <input class="form-control" asp-for="WedOne" value="@Model.WedOne" />
     </div>
 
     <div class="mb-3">
@@ -24,16 +25,16 @@
         asp-validation-for="WedTwo"
         class="text-danger font-weight-bold"
       ></span>
-      <input class="form-control" asp-for="WedTwo" />
+      <input class="form-control" asp-for="WedTwo" value="@Model.WedTwo" />
     </div>
 
     <div class="mb-3">
-      <label asp-for="WedDate">Weddind Date</label>
+      <label asp-for="WedDate">Weddindg Date</label>
       <span
         asp-validation-for="WedDate"
         class="text-danger font-weight-bold"
       ></span>
-      <input class="form-control" asp-for="WedDate" />
+      <input class="form-control" asp-for="WedDate" value="@Model.WedDate" />
     </div>
 
     <div class="mb-3">
@@ -42,7 +43,11 @@
         asp-validation-for="WedAddress"
         class="text-danger font-weight-bold"
       ></span>
-      <input class="form-control" asp-for="WedAddress" />
+      <input
+        class="form-control"
+        asp-for="WedAddress"
+        value="@Model.WedAddress"
+      />
     </div>
 
     <button class="btn btn-success">Submit</button>

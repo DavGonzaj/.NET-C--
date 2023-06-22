@@ -18374,6 +18374,11 @@
   "RootNamespace": "WeddingPlanner",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\WeddingPlanner\\Views\\Wedding\\Details.cshtml",
+      "TargetPath": "Views\\Wedding\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\WeddingPlanner\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -18416,6 +18421,11 @@
     {
       "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\WeddingPlanner\\Views\\Wedding\\AllWeddings.cshtml",
       "TargetPath": "Views\\Wedding\\AllWeddings.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\nyroj\\OneDrive\\Desktop\\dojo_assignments\\.NET(C#)\\WeddingPlanner\\Views\\Wedding\\Edit.cshtml",
+      "TargetPath": "Views\\Wedding\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -1,5 +1,4 @@
-﻿@model User
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -32,9 +31,11 @@
                  @{
     if (Context.Session.GetInt32("UUID") != null)
     {
+
         <li class="nav-item">
-            @* <span class="nav-username">Welcome,@Model.Name !</span> *@
+            <span class="nav-username">Welcome, HttpContext.Current.User.Identity.Name !</span>
             <form asp-controller="Home" asp-action="Logout" method="POST">
+                <a class="btn btn-info" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <a class="btn btn-info" asp-controller="Wedding" asp-action="NewWedding">Plan a Wedding</a> |
                 <button class="btn btn-info" type="submit">Logout</button>
             </form>

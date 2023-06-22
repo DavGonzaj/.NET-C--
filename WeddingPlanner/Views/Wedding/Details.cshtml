@@ -1,0 +1,30 @@
+@model Wedding
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">@Model.WedOne & @Model.WedTwo's wedding</h1>
+    <h2 class="card-subtitle mb-2 text-muted">Date: @Model.WedDate</h2>
+    <p class="card-text">Count</p>
+    <p class="card-text">Action</p>
+    <h3>Planned by: @Model.Planner?.Name</h3>
+        @if (Model.UserId == Context.Session.GetInt32("UUID"))
+        {
+        <a
+          asp-controller="Wedding"
+          asp-action="EditWedding"
+          asp-route-weddingId="@Model.WeddingId"
+          class="btn btn-warning">Edit</a>
+          <form asp-controller="Wedding" asp-action="DeleteWedding" asp-route-weddingId="@Model.WeddingId">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+           @* <a
+          asp-controller="Wedding"
+          asp-action="DeleteWedding"
+          asp-route-weddingId="@Model.WeddingId"
+          class="btn btn-danger">Delete</a> smfsdionfsonsonfosnffsfsfsdfsfsfsfsfsf  *@
+          @* smfsdionfsonsonfosnffsfsfsdfsfsfsfsfsf *@
+          }
+  </div>
+</div>
+
+
