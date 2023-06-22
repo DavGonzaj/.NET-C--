@@ -1,9 +1,11 @@
 using System.Diagnostics;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using BeltExam.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace BeltExam.Controllers;
 
@@ -51,6 +53,26 @@ public class CouponController : Controller
         return RedirectToAction("AllCoupons");
     }
 
+    [HttpPost("coupons/{couponId}/expired")]
+    public IActionResult Expired(int couponId)
+    {
+        Expired? expCoupon = db.Expired.FirstOrDefault(uses => uses.UserId == HttpContext.Session.GetInt32("UUID") && uses.CouponId == couponId);
+        if (expCoupon == null)
+        {
+            Expired newExp = new Expired()
+            {
+                CouponId = couponId,
+                UserId = (int)HttpContext.Session.GetInt32("UUID")
+            };
+
+            db.Expired.Add(newExp);
+        }
+        db.SaveChanges();
+        return RedirectToAction("AllCoupons");
+    }
+
+
+
 
     //counts
     [HttpPost("coupons/{couponId}/uses")]
@@ -71,6 +93,7 @@ public class CouponController : Controller
         return RedirectToAction("AllCoupons");
     }
 }
+
 
 // Name this anything you want with the word "Attribute" at the end
 public class SessionCheckAttribute : ActionFilterAttribute

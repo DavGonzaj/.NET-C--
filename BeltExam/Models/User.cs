@@ -19,6 +19,8 @@ public class User
     [Required(ErrorMessage = "is required")]
     [MinLength(8, ErrorMessage = "must be at least 8 characters")]
     [DataType(DataType.Password)]
+    [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]+$",
+        ErrorMessage = "Password must contain at least 1 letter, 1 number, and 1 special character")]
     public string Password { get; set; }
 
     [NotMapped]//don't add to DB

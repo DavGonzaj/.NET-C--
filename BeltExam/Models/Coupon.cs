@@ -23,5 +23,8 @@ public class Coupon
 
     public int UserId { get; set; }
     public User? Creator { get; set; }
+    public bool IsExpired { get; set; }
+    public int ExpiredCount { get; set; }
+    public List<Expired> Expired { get; set; } = new List<Expired>();
     public List<UserCouponUses> Uses { get; set; } = new List<UserCouponUses>();
 }
