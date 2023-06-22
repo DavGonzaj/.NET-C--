@@ -43,6 +43,7 @@ public class HomeController : Controller
         db.SaveChanges();
 
         HttpContext.Session.SetInt32("UUID", newUser.UserId);
+        HttpContext.Session.SetString("Name", newUser.Name); // Set the user's name in the session
         return RedirectToAction("AllWeddings", "Wedding");
     }
 
@@ -73,6 +74,7 @@ public class HomeController : Controller
         }
 
         HttpContext.Session.SetInt32("UUID", dbUser.UserId);
+        HttpContext.Session.SetString("Name", dbUser.Name); // Set the user's name in the session
         return RedirectToAction("AllWeddings", "Wedding");
     }
 

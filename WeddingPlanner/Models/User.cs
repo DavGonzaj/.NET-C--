@@ -13,6 +13,7 @@ public class User
 
     [Required(ErrorMessage = "is required")]
     [EmailAddress]
+    [UniqueEmail]
     public string Email { get; set; }
 
     [Required(ErrorMessage = "is required")]

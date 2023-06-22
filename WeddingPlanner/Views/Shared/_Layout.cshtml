@@ -33,7 +33,7 @@
     {
 
         <li class="nav-item">
-            <span class="nav-username">Welcome, HttpContext.Current.User.Identity.Name !</span>
+            <span class="nav-username">Welcome, @Context.Session.GetString("Name") !</span>
             <form asp-controller="Home" asp-action="Logout" method="POST">
                 <a class="btn btn-info" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                 <a class="btn btn-info" asp-controller="Wedding" asp-action="NewWedding">Plan a Wedding</a> |
