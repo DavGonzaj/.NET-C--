@@ -1,0 +1,43 @@
+@model List<Coupon>
+@using Microsoft.AspNetCore.Http
+<h1>Welcome, @Context.Session.GetString("Name")</h1>
+
+<div class="d-flex">
+    @foreach (Coupon coupon in Model)
+    {
+      <div class="card border-primary m-3">
+        <div class="card-body">
+          <h1 class="card-title">@coupon.Code</h1>
+          <h2 class="card-subtitle mb-2">@coupon.Website</h2>
+          <h3 class="card-subtitle mb-2">@coupon.Description</h3>
+          <h3 class="card-subtitle text-muted">Posted by: @coupon.Creator?.Name</h3>
+          <h4 class="card-title mt-4 text-muted">People that have used this:</h4>
+          <p>@coupon.Uses.Count</p>
+
+                @if (coupon.UserId != Context.Session.GetInt32("UUID"))
+                {
+                    bool alreadyUsed
+      = coupon.Uses.Any(uses => uses.UserId ==
+      Context.Session.GetInt32("UUID"));
+
+              <form
+                asp-controller="Coupon"
+                asp-action="Uses"
+                asp-route-couponId="@coupon.CouponId"
+              >
+                        @if (alreadyUsed)
+                        {
+                    <span class="text-muted">You used this coupon</span>
+                        }
+                        else
+                        {
+                    <button type="submit" class="btn btn-primary">Use this coupon</button>
+                        }
+              </form>
+                }
+        </div>
+      </div>
+    }
+</div>
+
+

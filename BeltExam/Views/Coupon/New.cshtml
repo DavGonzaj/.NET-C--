@@ -1,0 +1,42 @@
+@model Coupon
+
+<div class="container w-75 mx-auto">
+  <h2 class="text-center">New Coupon</h2>
+  <form
+    class="shadow p-3 rounded"
+    asp-controller="Coupon"
+    asp-action="CreateCoupon"
+    method="POST"
+  >
+    <div class="mb-3">
+      <label asp-for="Code">Coupon Code</label>
+      <span
+        asp-validation-for="Code"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input class="form-control" asp-for="Code" />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Website">Website applicable on</label>
+      <span
+        asp-validation-for="Website"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input class="form-control" asp-for="Website" />
+    </div>
+
+    <div class="mb-3">
+      <label asp-for="Description">Description</label>
+      <span
+        asp-validation-for="Description"
+        class="text-danger font-weight-bold"
+      ></span>
+      <input class="form-control" asp-for="Description" />
+    </div>
+
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+

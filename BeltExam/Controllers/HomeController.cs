@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Identity;
 using BeltExam.Models;
 
 namespace BeltExam.Controllers;
@@ -7,15 +9,82 @@ namespace BeltExam.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    //conncection to our database "db"
+    private MyContext db;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, MyContext context)
     {
         _logger = logger;
+        db = context;
     }
 
+    [HttpGet("")]
     public IActionResult Index()
     {
-        return View();
+        if (HttpContext.Session.GetInt32("UUID") != null)
+        {
+            return RedirectToAction("AllCoupons", "Coupon");
+        }
+        return View("Index");
+    }
+
+    [HttpPost("register")]
+    public IActionResult Register(User newUser)
+    {
+        if (!ModelState.IsValid)
+        {
+            return Index();
+        }
+
+        PasswordHasher<User> hasBrowns = new PasswordHasher<User>();
+        newUser.Password = hasBrowns.HashPassword(newUser, newUser.Password);
+
+        db.Users.Add(newUser);
+        db.SaveChanges();
+
+        HttpContext.Session.SetInt32("UUID", newUser.UserId);
+        HttpContext.Session.SetString("Name", newUser.Name); // Set the user's name in the session
+
+        return RedirectToAction("AllCoupons", "Coupon");
+    }
+
+    [HttpPost("login")]
+    public IActionResult Login(LoginUser loginUser)
+    {
+        if (!ModelState.IsValid)
+        {
+            return Index();
+        }
+
+        User dbUser = db.Users.FirstOrDefault(user => user.Email == loginUser.LoginEmail);
+
+        if (dbUser == null)
+        {
+            ModelState.AddModelError("Email", "not found");
+            return Index();
+        }
+
+        PasswordHasher<LoginUser> hashBrowns = new PasswordHasher<LoginUser>();
+        PasswordVerificationResult pwCompareResult = hashBrowns.VerifyHashedPassword(loginUser, dbUser.Password, loginUser.LoginPassword);
+
+        if (pwCompareResult == 0)
+        {
+            ModelState.AddModelError("LoginPassword", "invalid password");
+            return Index();
+        }
+
+        HttpContext.Session.SetInt32("UUID", dbUser.UserId);
+        HttpContext.Session.SetString("Name", dbUser.Name); // Set the user's name in the session
+
+        return RedirectToAction("AllCoupons", "Coupon");
+    }
+
+    [HttpPost("logout")]
+
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("Index");
     }
 
     public IActionResult Privacy()
@@ -29,3 +98,6 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
+
+
+

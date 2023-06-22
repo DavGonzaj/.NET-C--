@@ -1,0 +1,18 @@
+@model User
+
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">Account Information</h1>
+    <h2 class="card-subtitle mb-2 text-muted">Username: @Model.Name</h2>
+    <h2 class="card-subtitle mb-2 text-muted">Email: @Model.Email</h2>
+
+    <h2 class="card-subtitle mb-2 text-muted">
+      Number of Coupons Posted: @ViewData["NumberOfCouponsPosted"]
+    </h2>
+    <h2 class="card-subtitle mb-2 text-muted">
+      Number of Coupons Used: @ViewData["NumberOfCouponsUsed"]
+    </h2>
+  </div>
+</div>
+
+
