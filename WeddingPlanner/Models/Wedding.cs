@@ -23,5 +23,5 @@ public class Wedding
 
     public int UserId { get; set; }
     public User? Planner { get; set; }
-    // public List<WedConnect> WedtoUser { get; set; }
+    public List<UserWeddingSignup> Signups { get; set; } = new List<UserWeddingSignup>();
 }

@@ -1,3 +1,4 @@
+@model List<Wedding>
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
@@ -10,12 +11,32 @@
   <tbody>
         @foreach (Wedding wedding in Model)
         {
+            
         <tr>
           <td><a asp-controller="Wedding" asp-action="ViewOne" asp-route-weddingId="@wedding.WeddingId">@wedding.WedOne & @wedding.WedTwo</a></td>
           <td>@wedding.WedDate</td>
-          <td>Count</td>
-          <td>Action</td>
+          <td>@wedding.Signups.Count</td>
+          <td>
+            @if(wedding.UserId != Context.Session.GetInt32("UUID"))
+        {
+            bool alreadySignedUp = wedding.Signups.Any(signup => signup.UserId == Context.Session.GetInt32("UUID"));
+
+            <form asp-controller="Wedding" asp-action="Signup" asp-route-weddingId="@wedding.WeddingId">
+                <button class="btn btn-primary">
+                @if(alreadySignedUp)
+                {
+                    <span>Un-RSVP</span>
+                }
+                else
+                {
+                    <span>RSVP</span>
+                }
+                </button>
+            </form>
+        }
+          </td>
         </tr>
+        
         }
   </tbody>
 </table>

@@ -22,7 +22,7 @@ public class WeddingController : Controller
     [HttpGet("weddings")]
     public IActionResult AllWeddings()
     {
-        List<Wedding> allWeddings = db.Weddings.Include(wedding => wedding.Planner).ToList();
+        List<Wedding> allWeddings = db.Weddings.Include(wedding => wedding.Planner).Include(wedding => wedding.Signups).ToList();
         return View("AllWeddings", allWeddings);
     }
 
@@ -55,7 +55,7 @@ public class WeddingController : Controller
     [HttpGet("weddings/{weddingId}")]
     public IActionResult ViewOne(int weddingId)
     {
-        Wedding? oneWedding = db.Weddings.Include(wedding => wedding.Planner).FirstOrDefault(wedding => wedding.WeddingId == weddingId);
+        Wedding? oneWedding = db.Weddings.Include(wedding => wedding.Planner).Include(wedding => wedding.Signups).ThenInclude(signup => signup.User).FirstOrDefault(wedding => wedding.WeddingId == weddingId);
         if (oneWedding == null)
         {
             return RedirectToAction("AllWeddings");
@@ -110,6 +110,29 @@ public class WeddingController : Controller
             db.Weddings.Remove(wedding);
             db.SaveChanges();
         }
+        return RedirectToAction("AllWeddings");
+    }
+
+    //counts
+    [HttpPost("weddings/{weddingId}/signup")]
+    public IActionResult Signup(int weddingId)
+    {
+        UserWeddingSignup? existingSignup = db.UserWeddingSignups.FirstOrDefault(signup => signup.UserId == HttpContext.Session.GetInt32("UUID") && signup.WeddingId == weddingId);
+        if (existingSignup == null)
+        {
+            UserWeddingSignup newSignup = new UserWeddingSignup()
+            {
+                WeddingId = weddingId,
+                UserId = (int)HttpContext.Session.GetInt32("UUID")
+            };
+
+            db.UserWeddingSignups.Add(newSignup);
+        }
+        else
+        {
+            db.UserWeddingSignups.Remove(existingSignup);
+        }
+        db.SaveChanges();
         return RedirectToAction("AllWeddings");
     }
 }

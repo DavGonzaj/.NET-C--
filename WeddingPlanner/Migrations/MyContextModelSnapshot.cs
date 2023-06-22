@@ -48,6 +48,33 @@ namespace WeddingPlanner.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("WeddingPlanner.Models.UserWeddingSignup", b =>
+                {
+                    b.Property<int>("UserWeddingSignupId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WeddingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserWeddingSignupId");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("WeddingId");
+
+                    b.ToTable("UserWeddingSignup");
+                });
+
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
                 {
                     b.Property<int>("WeddingId")
@@ -86,6 +113,25 @@ namespace WeddingPlanner.Migrations
                     b.ToTable("Weddings");
                 });
 
+            modelBuilder.Entity("WeddingPlanner.Models.UserWeddingSignup", b =>
+                {
+                    b.HasOne("WeddingPlanner.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WeddingPlanner.Models.Wedding", "Wedding")
+                        .WithMany("Signups")
+                        .HasForeignKey("WeddingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("Wedding");
+                });
+
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
                 {
                     b.HasOne("WeddingPlanner.Models.User", "Planner")
@@ -95,6 +141,11 @@ namespace WeddingPlanner.Migrations
                         .IsRequired();
 
                     b.Navigation("Planner");
+                });
+
+            modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
+                {
+                    b.Navigation("Signups");
                 });
 #pragma warning restore 612, 618
         }

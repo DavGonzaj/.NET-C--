@@ -34,7 +34,8 @@
         asp-validation-for="WedDate"
         class="text-danger font-weight-bold"
       ></span>
-      <input class="form-control" asp-for="WedDate" value="@Model.WedDate" />
+      <input class="form-control" asp-for="WedDate" type="date" data-val="true"/>
+      <input class="form-control" asp-for="WedDate" type="time" data-val="true"/>
     </div>
 
     <div class="mb-3">
