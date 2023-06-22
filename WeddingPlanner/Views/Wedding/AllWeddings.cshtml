@@ -1,0 +1,11 @@
+@model List<Wedding>
+<h1>All Weddings</h1>
+
+@foreach (Wedding wedding in Model)
+{
+    <div>
+      <h1>
+            @wedding.WedAddress & @wedding.WedDate posted by @wedding.Planner?.Name
+      </h1>
+    </div>
+} 

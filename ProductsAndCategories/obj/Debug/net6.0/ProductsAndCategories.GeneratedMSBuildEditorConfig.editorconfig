@@ -8,69 +8,69 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProductsAndCategories
 build_property.RootNamespace = ProductsAndCategories
-build_property.ProjectDir = C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\ProductsAndCategories\
+build_property.ProjectDir = c:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\ProductsAndCategories\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\ProductsAndCategories
+build_property.MSBuildProjectDirectory = c:\Users\nyroj\OneDrive\Desktop\dojo_assignments\.NET(C#)\ProductsAndCategories
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/Categories.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/Categories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/Index.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/NewCategory.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/NewCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/OneCat.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/OneCat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbmVDYXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/OneProduct.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/OneProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbmVQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/Privacy.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_CatForm.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_CatForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2F0Rm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_CatView.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_CatView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ2F0Vmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_ProductForm.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_ProductForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUHJvZHVjdEZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_ProductView.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Home/_ProductView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfUHJvZHVjdFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Shared/Error.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/_ViewImports.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/_ViewStart.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Shared/_Layout.cshtml]
+[c:/Users/nyroj/OneDrive/Desktop/dojo_assignments/.NET(C\#)/ProductsAndCategories/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8d2lq70uyv
